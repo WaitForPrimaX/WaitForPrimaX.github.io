@@ -2,6 +2,8 @@ title: PrimaX
 description: "文章与随笔"
 baseurl: ""
 url: "https://waitforprimax.github.io"
+timezone: Asia/Shanghai
+future: true
 
 author:
   name: Sammy
