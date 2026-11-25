@@ -1,0 +1,34 @@
+{% if page.date and site.waline.serverURL != "" %}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@waline/client@3.16.2/dist/waline.css" />
+<link rel="stylesheet" href="{{ '/assets/waline.css' | relative_url }}" />
+<div id="waline"></div>
+<script type="module">
+  import { init } from "https://cdn.jsdelivr.net/npm/@waline/client@3.16.2/dist/waline.js";
+
+  init({
+    el: "#waline",
+    serverURL: {{ site.waline.serverURL | jsonify }},
+    path: window.location.pathname.replace(/\/$/, ""),
+    lang: "zh-CN",
+    dark: false,
+    login: "disable",
+    meta: ["nick"],
+    requiredMeta: [],
+    imageUploader: false,
+    search: false,
+    reaction: [{{ "/assets/like.svg" | relative_url | jsonify }}],
+    locale: {
+      placeholder: "写下你的想法",
+      sofa: "还没有评论",
+      nick: "昵称",
+      anonymous: "匿名",
+      submit: "送出",
+      comment: "评论",
+      reactionTitle: "喜欢这篇文章吗",
+      reaction0: "喜欢",
+      like: "喜欢",
+      cancelLike: "取消喜欢"
+    }
+  });
+</script>
+{% endif %}
