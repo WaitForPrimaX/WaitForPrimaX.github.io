@@ -29,5 +29,5 @@ exclude:
   - Gemfile.lock
 
 waline:
-  serverURL: ""
+  serverURL: "https://primax-waline.vercel.app"
 
